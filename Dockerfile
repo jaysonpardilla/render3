@@ -32,4 +32,4 @@ RUN pip install -r requirements.txt
 EXPOSE 8000
 
 # Start the app with gunicorn
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "main.wsgi:application", "--bind", "0.0.0.0:8000"]
